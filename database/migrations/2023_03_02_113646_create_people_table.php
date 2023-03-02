@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('people', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('id_number')->primary();
+            $table->integer('id_number');
             $table->date('dob');
             $table->integer('age');
             $table->integer('mobile');

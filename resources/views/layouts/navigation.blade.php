@@ -21,7 +21,7 @@
             </li>
 
             <li class="nav-item">
-                <a href="{{ route('home') }}" class="nav-link">
+                <a href="{{ route('show') }}" class="nav-link">
                     <i class="nav-icon fas fa-th"></i>
                     <p>
                       Show Users
