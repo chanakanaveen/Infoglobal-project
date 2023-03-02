@@ -20,11 +20,12 @@
                 <div class="col-lg-12">
                     <div class="card">
                         <div class="card-body">
-                            <h5 class="card-title">{{ __('About us') }}</h5>
+                            {{-- <h5 class="card-title">{{ __('About us') }}</h5> --}}
 
                             <p class="card-text">
-                                {{ __('Sample static text page ') }}
+                                Welcome to our website, where we offer a reliable and efficient person registration system to store and maintain the personal data of individuals who deal with financial companies.
                             </p>
+                            <p>Our system is designed to identify individuals uniquely by their national ID number, ensuring that their data is safe and secure. Our user-friendly and responsive UI ensures that individuals can easily navigate and use our system without any technical difficulties.</p>
                         </div>
                     </div>
                 </div>

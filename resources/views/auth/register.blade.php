@@ -10,8 +10,8 @@
             <div class="input-group mb-3">
                 <select type="text" name="role" class="form-control @error('role') is-invalid @enderror"
                         required autocomplete="role">
-                    <option value="data-entry">Data Entry</option>
-                    <option value="data-viewer">Data Viewer</option>
+                    <option value="admin">Data Entry</option>
+                    <option value="user">Data Viewer</option>
                 </select>
                 @error('role')
                 <span class="error invalid-feedback">
