@@ -36,4 +36,11 @@ Route::middleware('auth')->group(function () {
     Route::get('show',[PersonController::class,'index'])->name('show');
     Route::post('people/store', [PersonController::class, 'store'])->name('person.store');
 
+    Route::get('people/view/{person}', [PersonController::class, 'person'])->name('person.show');
+
+    Route::get('people/edit/{person}', [PersonController::class, 'edit'])->name('person.edit');
+    Route::patch('people/update/{person}', [PersonController::class, 'update'])->name('person.update');
+
+    Route::get('people/delete/{person}', [PersonController::class, 'delete'])->name('person.delete');
+
 });

@@ -6,7 +6,7 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1 class="m-0">User Registation</h1>
+                    <h1 class="m-0">User Update</h1>
                 </div><!-- /.col -->
             </div><!-- /.row -->
         </div><!-- /.container-fluid -->
@@ -23,18 +23,20 @@
 
                             <div class="card card-primary">
                                 <div class="card-header">
-                                  <h3 class="card-title">Registation Form</h3>
+                                  <h3 class="card-title">Update Form</h3>
                                 </div>
                                 <!-- /.card-header -->
                                 <!-- form start -->
-                                <form method="POST" action="{{route('person.store')}}" class="form-horizontal"  >
+                                <form method="POST" action="{{ route('person.update', $person->id) }}" class="form-horizontal"  >
+
+                                    @method('PATCH')
                                     @csrf
 
                                   <div class="card-body" >
 
                                     <div class="form-group">
                                       <label>Name</label>
-                                      <input  type="text" name="name" class="form-control @error('name') is-invalid @enderror"  placeholder="Enter Your Name" required value="{{ old('name') }}">
+                                      <input  type="text" name="name" class="form-control @error('name') is-invalid @enderror"  placeholder="Enter Your Name" required value="{{ old('name', $person->name) }}">
 
                                       @error('name')
                                         <span class="error invalid-feedback"> {{ $message }} </span>
@@ -43,7 +45,7 @@
 
                                     <div class="form-group">
                                         <label >Address</label>
-                                        <input type="text" name="address" class="form-control @error('address') is-invalid @enderror"  placeholder="Enter Your Address" required value="{{ old('address') }}">
+                                        <input type="text" name="address" class="form-control @error('address') is-invalid @enderror"  placeholder="Enter Your Address" required value="{{ old('address', $person->address) }}">
 
                                         @error('address')
                                         <span class="error invalid-feedback"> {{ $message }} </span>
@@ -52,7 +54,7 @@
 
                                     <div class="form-group">
                                         <label >ID Number</label>
-                                        <input type="text" name="id_number" class="form-control @error('id_number') is-invalid @enderror"  placeholder="Enter Your ID Number" required value="{{ old('id_number') }}">
+                                        <input type="text" name="id_number" class="form-control @error('id_number') is-invalid @enderror"  placeholder="Enter Your ID Number" disabled value="{{ old('id_number', $person->id_number) }}">
 
                                         @error('id_number')
                                         <span class="error invalid-feedback"> {{ $message }} </span>
@@ -61,7 +63,7 @@
 
                                       <div class="form-group">
                                         <label >Date of Birth</label>
-                                        <input type="date" name="dob" class="form-control @error('dob') is-invalid @enderror"  placeholder="Enter Your Date of birth" required value="{{ old('dob') }}">
+                                        <input type="date" name="dob" class="form-control @error('dob') is-invalid @enderror"  placeholder="Enter Your Date of birth" required value="{{ old('dob', $person->dob) }}">
 
                                         @error('dob')
                                         <span class="error invalid-feedback"> {{ $message }} </span>
@@ -70,7 +72,7 @@
 
                                       <div class="form-group">
                                         <label >Age</label>
-                                        <input type="number" name="age" class="form-control @error('age') is-invalid @enderror"  placeholder="Enter Your Age" required value="{{ old('age') }}">
+                                        <input type="number" name="age" class="form-control @error('age') is-invalid @enderror"  placeholder="Enter Your Age" required value="{{ old('age', $person->age) }}">
                                         @error('age')
                                         <span class="error invalid-feedback">{{ $message }}</span>
                                         @enderror
@@ -78,11 +80,11 @@
 
                                       <div class="form-group">
                                         <label >Gender</label>
-                                        <select type="text" name="gender" class="form-control @error('gender') is-invalid @enderror" required value="{{ old('gender') }}">
+                                        <select type="text" name="gender" class="form-control @error('gender') is-invalid @enderror" required value="{{ old('gender', $person->gender) }}">
                                             <option value={{ null }}>Select Gender</option>
-                                            <option value="Male">Male</option>
-                                            <option value="Female">Female</option>
-                                            <option value="Other">Other</option>
+                                            <option @if($person->gender == 'Male') selected @endif value="Male">Male</option>
+                                            <option @if($person->gender == 'Female') selected @endif value="Female">Female</option>
+                                            <option @if($person->gender == 'Other') selected @endif value="Other">Other</option>
                                         </select>
 
                                         @error('gender')
@@ -92,7 +94,7 @@
 
                                       <div class="form-group">
                                         <label >Mobile Number</label>
-                                        <input type="number" name="mobile" class="form-control @error('mobile') is-invalid @enderror"  placeholder="Enter Your Mobile Number" required value="{{ old('mobile') }}">
+                                        <input type="number" name="mobile" class="form-control @error('mobile') is-invalid @enderror"  placeholder="Enter Your Mobile Number" required value="{{ old('mobile', $person->mobile) }}">
 
                                         @error('mobile')
                                         <span class="error invalid-feedback"> {{ $message }} </span>
@@ -102,13 +104,13 @@
 
                                       <div class="form-group">
                                         <label >Religion</label>
-                                        <select type="text" name="religion" class="form-control @error('religion') is-invalid @enderror" required value="{{ old('religion') }}">
+                                        <select type="text" name="religion" class="form-control @error('religion') is-invalid @enderror" required value="{{ old('religion', $person->religion) }}">
                                             <option value={{ null }}>Select Your Religion</option>
-                                            <option value="Buddhist">Buddhist</option>
-                                            <option value="Christian">Christian</option>
-                                            <option value="Muslim">Muslim</option>
-                                            <option value="Hindu">Hindu</option>
-                                            <option value="Other">Other</option>
+                                            <option @if($person->religion == 'Buddhist') selected @endif value="Buddhist">Buddhist</option>
+                                            <option @if($person->religion == 'Christian') selected @endif value="Christian">Christian</option>
+                                            <option @if($person->religion == 'Muslim') selected @endif value="Muslim">Muslim</option>
+                                            <option @if($person->religion == 'Hindu') selected @endif value="Hindu">Hindu</option>
+                                            <option @if($person->religion == 'Other') selected @endif value="Other">Other</option>
                                         </select>
 
                                         @error('religion')
@@ -118,12 +120,12 @@
 
                                       <div class="form-group">
                                         <label >Nationality</label>
-                                        <select type="text" name="nationality" class="form-control @error('nationality') is-invalid @enderror" required value="{{ old('nationality') }}">
+                                        <select type="text" name="nationality" class="form-control @error('nationality') is-invalid @enderror" required value="{{ old('nationality', $person->nationality) }}">
                                             <option value={{ null }}>Select your Nationality</option>
-                                            <option value="Sinhala">Sinhala</option>
-                                            <option value="Tamil">Tamil</option>
-                                            <option value="Islam">Islam</option>
-                                            <option value="Other">Other</option>
+                                            <option @if($person->nationality == 'Sinhala') selected @endif value="Sinhala">Sinhala</option>
+                                            <option @if($person->nationality == 'Tamil') selected @endif value="Tamil">Tamil</option>
+                                            <option @if($person->nationality == 'Islam') selected @endif value="Islam">Islam</option>
+                                            <option @if($person->nationality == 'Other') selected @endif value="Other">Other</option>
                                         </select>
 
                                         @error('nationality')
@@ -136,7 +138,7 @@
                                   <!-- /.card-body -->
 
                                   <div class="card-footer">
-                                    <button type="submit" class="btn btn-primary">Submit</button>
+                                    <button type="submit" class="btn btn-primary">Update</button>
                                   </div>
                                 </form>
                               </div>

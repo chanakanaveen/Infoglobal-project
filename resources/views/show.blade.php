@@ -51,6 +51,20 @@
                                         <td>{{ $person->mobile }}</td>
                                         <td>{{ $person->religion }}</td>
                                         <td>{{ $person->nationality }}</td>
+                                        <td><a href="{{ route('person.show', $person->id) }}"
+                                            class="btn btn-success btn-block">{{ __('View') }}</a>
+
+                                            <a href="{{ route('person.edit', $person->id) }}"
+                                                class="btn btn-warning btn-block" role="button">{{ __('Edit') }}
+                                            </a>
+
+                                            <a onclick="return confirm('Are you sure?')"
+                                               href="{{ route('person.delete', $person->id) }}"
+                                               class="btn btn-danger btn-block">{{ __('Delete') }}</a>
+
+
+
+                                        </td>
 
                                     </tr>
                                 @endforeach
