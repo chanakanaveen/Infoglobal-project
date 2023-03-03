@@ -11,18 +11,19 @@
     <nav class="mt-2">
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
             data-accordion="false">
+            @can('admin')
             <li class="nav-item">
                 <a href="{{ route('home') }}" class="nav-link">
-                    <i class="nav-icon fas fa-th"></i>
+                    <i class="nav-icon fas fa-user-plus"></i>
                     <p>
                       Add Users
                     </p>
                 </a>
             </li>
-
+            @endcan
             <li class="nav-item">
                 <a href="{{ route('show') }}" class="nav-link">
-                    <i class="nav-icon fas fa-th"></i>
+                    <i class="nav-icon fas fa-address-card"></i>
                     <p>
                       Show Users
                     </p>
@@ -30,8 +31,8 @@
             </li>
 
             <li class="nav-item">
-                <a href="{{ route('home') }}" class="nav-link">
-                    <i class="nav-icon fas fa-th"></i>
+                <a href="{{ route('about') }}" class="nav-link">
+                    <i class="nav-icon fas fa-desktop"></i>
                     <p>
                         Dashboard
                     </p>

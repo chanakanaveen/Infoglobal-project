@@ -18,7 +18,7 @@ class PersonController extends Controller
 
    public function store(StorePersonRequest $request ){
 
-
+    $this->authorize('admin');
     $request->validated();
 
     Person::create([
@@ -46,10 +46,13 @@ class PersonController extends Controller
    }
 
    public function edit(Person $person){
+    $this->authorize('admin');
     return view('edit',compact('person'));
    }
 
    public function update(UpdatePersonRequest $request,Person $person){
+
+    $this->authorize('admin');
 
     $person->update($request->only([
         'name',  'dob', 'age', 'mobile', 'gender', 'address', 'religion', 'nationality'
@@ -61,6 +64,8 @@ class PersonController extends Controller
    }
 
    public function delete(Person $person){
+
+    $this->authorize('admin');
 
     $person->delete();
     return back()->with('person-deleted', "Person delete successfully");

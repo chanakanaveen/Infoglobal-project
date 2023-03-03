@@ -54,6 +54,7 @@
                                         <td><a href="{{ route('person.show', $person->id) }}"
                                             class="btn btn-success btn-block">{{ __('View') }}</a>
 
+                                            @can('admin')
                                             <a href="{{ route('person.edit', $person->id) }}"
                                                 class="btn btn-warning btn-block" role="button">{{ __('Edit') }}
                                             </a>
@@ -62,7 +63,7 @@
                                                href="{{ route('person.delete', $person->id) }}"
                                                class="btn btn-danger btn-block">{{ __('Delete') }}</a>
 
-
+                                            @endcan
 
                                         </td>
 

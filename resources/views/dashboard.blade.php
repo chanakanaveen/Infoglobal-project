@@ -20,125 +20,12 @@
                 <div class="col-lg-12">
                     <div class="card">
                         <div class="card-body">
+                            {{-- <h5 class="card-title">{{ __('About us') }}</h5> --}}
 
-                            <div class="card-body login-card-body">
-                                <p class="login-box-msg">{{ __('Details of '. $person->name) }}</p>
-
-                                <form>
-
-                                    <div class="input-group mb-3">
-                                        <input data-toggle="tooltip" data-placement="top" title="Name" disabled
-                                               type="text" name="name"
-                                               class="form-control placeholder="{{ __('Name') }}" required
-                                        autocomplete="name"
-                                        value="{{ old('name', $person->name) }}">
-
-                                        <div class="input-group-append">
-                                            <div class="input-group-text">
-                                                <span class="fas fa-user"></span>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="input-group mb-3">
-                                        <input data-toggle="tooltip" data-placement="top" title="NIC Number" disabled
-                                               type="number" name="id_number"
-                                               class="form-control placeholder="{{ __('ID Number') }}" required
-                                        autocomplete="id_number"
-                                        value="{{ old('id_number', $person->id_number) }}">
-                                        <div class="input-group-append">
-                                            <div class="input-group-text">
-                                                <span class="fas fa-address-card"></span>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="input-group mb-3">
-                                        <input data-toggle="tooltip" data-placement="top" title="Date Of Birth" disabled
-                                               type="date" name="dob"
-                                               class="form-control
-                                               placeholder="{{ __('Date of birth') }}" required autocomplete="dob"
-                                        value="{{ old('dob', $person->dob) }}">
-                                    </div>
-
-                                    <div class="input-group mb-3">
-                                        <input data-toggle="tooltip" data-placement="top" title="Age" disabled
-                                               type="number" name="age"
-                                               class="form-control
-                                               placeholder="{{ __('Age') }}" required autocomplete="age"
-                                        value="{{ old('age', $person->age) }}">
-                                        <div class="input-group-append">
-                                            <div class="input-group-text">
-                                                <span class="fas fa-person-booth"></span>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="input-group mb-3">
-                                        <input data-toggle="tooltip" data-placement="top" title="Mobile Number" disabled
-                                               type="number" name="mobile"
-                                               class="form-control
-                                               placeholder="{{ __('Mobile Number') }}" required autocomplete="mobile"
-                                        value="{{ old('mobile', $person->mobile) }}">
-                                        <div class="input-group-append">
-                                            <div class="input-group-text">
-                                                <span class="fas fa-mobile"></span>
-                                            </div>
-                                        </div>
-
-                                    </div>
-
-                                    <div class="input-group mb-3">
-                                        <input disabled type="text" name="address"
-                                               class="form-control
-                                               placeholder="{{ __('Address') }}" autocomplete="address"
-                                        value="{{ old('address', $person->address) }}" autofocus>
-                                        <div class="input-group-append">
-                                            <div class="input-group-text">
-                                                <span class="fas fa-location-arrow"></span>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="input-group mb-3">
-                                        <input disabled type="text" name="gender"
-                                               class="form-control
-                                               placeholder="{{ __('Gender') }}" autocomplete="gender"
-                                        value="{{  $person->gender }}" autofocus>
-                                        <div class="input-group-append">
-                                            <div class="input-group-text">
-                                                <span class="fas fa-venus-mars"></span>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="input-group mb-3">
-                                        <input disabled type="text" name="address"
-                                               class="form-control
-                                               placeholder="{{ __('Religion') }}" autocomplete="address"
-                                        value="{{  $person->religion }}" autofocus>
-                                        <div class="input-group-append">
-                                            <div class="input-group-text">
-                                                <span class="fas fa-yin-yang"></span>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="input-group mb-3">
-                                        <input disabled type="text" name="address"
-                                               class="form-control placeholder="{{ __('Nationality') }}"
-                                        autocomplete="address"
-                                        value="{{  $person->nationality }}" autofocus>
-                                        <div class="input-group-append">
-                                            <div class="input-group-text">
-                                                <span class="fas fa-building"></span>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                </form>
-                            </div>
-
+                            <p class="card-text">
+                                Welcome to our website, where we offer a reliable and efficient person registration system to store and maintain the personal data of individuals who deal with financial companies.
+                            </p>
+                            <p>Our system is designed to identify individuals uniquely by their national ID number, ensuring that their data is safe and secure. Our user-friendly and responsive UI ensures that individuals can easily navigate and use our system without any technical difficulties.</p>
                         </div>
                     </div>
                 </div>
@@ -148,4 +35,3 @@
     </div>
     <!-- /.content -->
 @endsection
-
