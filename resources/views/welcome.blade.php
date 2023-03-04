@@ -6,8 +6,8 @@
 	<style>
 		body {
 			font-family: sans-serif;
-			background-color: #F5F5F5;
-			color: #333333;
+			background-color: #292626;
+			color: #ffffff;
 			line-height: 1.5;
 			overflow-x: hidden;
 		}
@@ -39,9 +39,10 @@
 		}
 
 		.nav {
-            margin-left: 520px;
+            margin-left: 650px;
 			display: flex;
 			align-items: center;
+            
 		}
 
 		.nav a {
@@ -49,7 +50,7 @@
 			font-size: 20px;
 			font-weight: bold;
 			text-decoration: none;
-			color: #333333;
+			color: #ffffff;
 			transition: color 0.2s ease-in-out;
 		}
 

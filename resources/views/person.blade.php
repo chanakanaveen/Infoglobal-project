@@ -34,7 +34,7 @@
                                   <div class="card-body" >
 
                                     <div class="form-group">
-                                      {{-- <label>Name</label> --}}
+                                      <label>Name</label>
                                       <input  type="text" name="name" class="form-control @error('name') is-invalid @enderror"  placeholder="Enter Your Name" required value="{{ old('name', $person->name) }}" disabled>
 
                                       @error('name')
