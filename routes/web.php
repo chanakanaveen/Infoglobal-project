@@ -5,6 +5,7 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PersonController;
+use App\Http\Controllers\DashboardController;
 
 /*
 |--------------------------------------------------------------------------
@@ -43,4 +44,5 @@ Route::middleware('auth')->group(function () {
 
     Route::get('people/delete/{person}', [PersonController::class, 'delete'])->name('person.delete');
 
+    Route::get('dashboard', [DashboardController::class, 'index'])->name('dashboard');
 });
